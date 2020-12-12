@@ -299,6 +299,10 @@ def _swift_autoconfiguration_impl(repository_ctx):
         _create_linux_toolchain(repository_ctx)
 
 swift_autoconfiguration = repository_rule(
-    environ = ["CC", "PATH"],
+    environ = [
+        "CC", 
+        "PATH",
+        "DEVELOPER_DIR",
+        ],
     implementation = _swift_autoconfiguration_impl,
 )
